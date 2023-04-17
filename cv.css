@@ -6,89 +6,99 @@ body {
   }
   
   /* Estilo de la barra de navegación */
-  nav {
-    background-color: #f2f2f2;
-    padding: 20px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+nav {
+    background-color: #000000;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    }
+    
+nav h1 {
+    text-align: center;
+    size: 40px;
   }
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    flex-grow: 1;
-  }
-  nav li {
-    margin-right: 20px;
-  }
-  nav a {
+  
+    
+    nav ul {
+      
+      display:flex;
+      flex-direction:row-reverse;
+      margin:0;
+      padding:0;
+      color:#000;
+    }
+    
+    nav ul li{
+      align-items: center;
+      flex-grow: 1;
+      border:solid;
+      border-style: groove;
+      }
+      
+    
+    nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
-    padding: 25px;
-    transition: color 0.3s ease;
-  }
-  
-  nav li:first-child {
-    flex-basis: 80%;
-    flex-grow: 0;
-  }
-  nav li:not(:first-child) {
-    flex-grow: 0;
-  }
-  nav a:hover {
-    color: #555;
-  }
-  
-  nav ul li {
-    padding: 5px 0;
-    background-color: transparent;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  nav ul li:hover {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  
-  /* Estilo del encabezado */
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 200px;
-  }
-  header img {
-    max-width: 15%;
-    height: auto;
-    margin-right: 30px;
-  }
-  header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
-  header p {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  header button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    font-size: 20px;
+    font-family: sans-serif;
+    }
+    
+    nav ul li a:hover {
+    color: white;
     background-color: #333;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+    
+    }
+    ul li {
+      text-decoration: none;
+      display: inline-block;
+      
+      }
+      
+      ul li a {
+      
+      display: block;
+      padding: 10px;
+      background-color: #ccc;
+      color: #000;
+      
+      }
+      
+       ul li a:hover {
+      text-decoration: none;
+      background-color: #aaa;
+      }
+      
+       ul li:hover ul {
+      text-decoration: none;
+      display: block;
+      }
+      
+       ul ul {
+      text-decoration: none;
+      display: none;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      }
+      
+       ul ul li {
+      text-decoration: none;
+      display: block;
+      }
+      
+       ul ul li a {
+      display: block;
+      padding: 10px;
+      color: #000;
+      text-decoration: none;
+      }
+      
+       ul ul li a:hover {
+      text-decoration: none;
+      background-color: #ddd;
+      }
   /* Estilo del main */
   main {
     max-width: 700px; 
@@ -98,12 +108,23 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 5px;
+    background-color: #333;
   }
   main h1, main h2, main h3, main p {
     margin-bottom: 20px;
   }
-  main h1 {
-    text-align: center;
+  header {
+  size: 28px;
+  text-align: center;
+	background-color: #333;
+	color: white;
+	padding: 20px;
+	}
+  header h1{
+  font-size: 40px;
+  }
+  main div {
+color: #fff;
   }
   
   
@@ -111,14 +132,10 @@ body {
     background-color: transparent;
     color: black;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 20px;
     padding: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-  }
-  footer a {
-    text-decoration: none; /* quita la línea de subrayado del enlace */
-    color: inherit; /* hereda el color del texto del elemento padre */
   }
