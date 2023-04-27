@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # **APUNTES XML**
 ## ¿QUE ES XML?
 Es un lenguaje de marcas diseñado para describir datos estructurados y facilitar el intercambio de información entre diferentes sistemas informáticos. 
@@ -80,3 +81,6 @@ DTD es una descripción de estructura y sintaxis de un documento XML o SGML, ade
 <!ATTLIST language abbrev CDATA #REQUIRED>
 <!ATTLIST language prefix CDATA>
 <!ATTLIST id_weapon CDATA #REQUIRED>```
+=======
+# **Pagina amb les entregas de ("Vuestra Página Profesional (FINAL)")+("Entrega_HTML Reshulón")**
+>>>>>>> a0ccffac431c28288596cbca94b58647aef335e4
