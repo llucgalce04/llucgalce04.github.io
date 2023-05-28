@@ -57,9 +57,15 @@ header {
 	background-color: #333;
 	
 	}
-	html{
-		background-color: #000;
-	}
+	html {
+		color: #fff;
+		background-image: url('matrix1.gif');
+		background-repeat: no-repeat;
+		background-size: cover;
+		width:"250";
+		height:"250";
+	  }
+	  
 	
 	/* Estilos del contenido principal */
 	main {
@@ -103,6 +109,13 @@ header {
 	
 	main li {
 	margin-bottom: 10px;
+	}
+
+	body main img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 	
 	/* Estilos del formulario */

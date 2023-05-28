@@ -4,9 +4,15 @@
     <title>Pagina Lluc</title>
 	<link rel="stylesheet" href="style.css" />
     <body class="animated-background">
-
-
+    <script src="scriptsito.js"></script>
 </head>
+<script>
+    function mostrarTexto() {
+  var texto = document.getElementById("textoOculto");
+  texto.style.display = "block";
+}
+
+</script>
 <body>
 <header>
 <h1>Lluc Galceran</h1>
@@ -21,9 +27,14 @@
         
     </ul>
     </nav>
-   
-   	<main>
-				
+<body>
+    <main>
+        <h1>Pagina Principal</h1>
+        <h2>¿ Quien soy ?</h2>
+        <button onclick="mostrarTexto()">Mostrar Texto</button>
+<p id="textoOculto" style="display: none;">Me llamo Lluc Galceran y tengo 18 años ahora mismo soy estudiante de Administración de Sistemas Informáticos en perfil Profesional de Ciberseguridad, todavía no he realizado prácticas pero estoy abierto a ofertas, que me ayuden a desarrollar mi conocimiento de la industria y obtener experiencia práctica en empresas importantes del sector. Soy una persona orientada al cliente y en busca de soluciones, y me puedo comunicar en Inglés, Catalán y Castellano.</p>
+        <img src="hackersito3.png" alt="White Hacker" title="foto hacker">
+        
 	</main>
 
 </body>

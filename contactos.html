@@ -11,27 +11,19 @@
         rellenarcampos();
     });
     
-    function rellenarcampos() {
-    
-        let nombre = document.getElementById("nombre").value;
-        let email = document.getElementById("correo").value;
-        let country = document.getElementById("country").value;        
-        
-        if (nombre == '') {		
-            alert('Rellena los campos restantes por favor.')
-            return;
-        }
-              
-        if (email == '') {		
-            alert('Rellena los campos restantes por favor.')
-            return;
-        }
-        
-        if (country == none) {		
-            alert('Rellena los campos restantes por favor.')
-            return;
-        }
-    }
+function rellenarcampos() {
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("correo").value;
+  let country = document.getElementById("country").value;
+
+  if (nombre == "" || email == "" || country == "none") {
+    alert("Rellena los campos restantes por favor.");
+    return;
+  }
+
+
+}
+
     
 	</script>
 <header>
@@ -51,20 +43,9 @@
 
 		
 	<main>
-		
-		<h1>Quien soy?</h1>
-		<p>Me llamo Lluc Galceran y tengo 18 años ahora mismo soy estudiante de Administración de Sistemas
-			Informáticos en perfil Profesional de
-			Ciberseguridad, todavía no he realizado prácticas pero estoy abierto a ofertas, que me ayuden
-			a desarrollar mi conocimiento
-			de la industria y obtener experiencia práctica en
-			empresas importantes del sector. Soy una persona
-			orientada al cliente y en busca de soluciones, y me
-			puedo comunicar en Inglés, Catalán y Castellano.</p>
+					<h2>Para Contactar conmigo rellena este formulario:</h2>
 
-			<h2>Para Contactar conmigo rellena este formulario:</h2>
-
-			<form id="formulario" action="mailto:lluc.galceran@enti.cat" method="get" enctype="text/plain">
+			<form id="formulario" action="mailto:lluc.galceran@enti.cat" method="get" enctype="text/plain" class="form-anim">
 				<fieldset>
 				<legend> Información Personal </legend>
 				<p><label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required /></p>
@@ -319,7 +300,7 @@
 					</select>
 				</p>
 				<p><label for="comentario">Comentario:</label></p>
-				<textarea name="textarea" rows="10" cols="50">Comentario:</textarea>
+				<textarea name="textarea" rows="10" cols="50">Escribe algo:</textarea>
 				<p><input type="submit" value="Enviar" id="enviar" onClick="rellenarcampos();" /></p>
 			</fieldset>
 			</form>
