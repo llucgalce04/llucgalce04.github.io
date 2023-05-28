@@ -1,0 +1,33 @@
+[
+
+	{
+		"pregunta": "Oro parece, plata no es. ¿Qué es?",
+		"respuesta": "Plátano"
+	},
+		
+	{
+		"pregunta": "Abierto siempre estoy para todos los niños. Cerrado y solo me quedo los domingos.",
+		"respuesta": "El colegio"
+	},
+
+	{
+		"pregunta": "Se la doy a todo el mundo y me quedo con ella, ¿qué es?",
+		"respuesta": "La mano"
+	},
+
+	{
+		"pregunta": "Buenas y sonoras cuerdas tengo; cuando me rascan, a la gente entretengo.",
+		"respuesta": "Una guitarra"
+	},
+
+	{
+		"pregunta": "Tengo agujas y no sé coser, tengo números y no sé leer.",
+		"respuesta": "El reloj"
+	},
+
+	{
+		"pregunta": "Cuando calor tengo, «frío», y no «frío» sin calor.",
+		"respuesta": "La sarten"
+	}
+
+]

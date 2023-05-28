@@ -5,86 +5,107 @@
 		<title>Juego</title>
 		<link rel="stylesheet" href="game.css" />
 	</head>
-    <header>
-        <h1>Contactos</h1>
-        <nav>
-            <ul>
-                <li><a href="hobbies.html">Hobbies</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="index.html">Index</a></li>
-                <li><a href="contactos.html">Contacto</a></li>
-                
-            </ul>
-            </nav>
     
-    </header>
-  <body>
-    <h1>Adivinanza</h1>
-    <p id="adivinanza"></p>
-    <input type="text" id="respuesta">
-    <button id="comprobar">Comprobar</button>
-    <button id="siguiente">Siguiente</button>
-    <p id="resultado"></p>
 
     <script>
-       let adivinanzas = [
-        {
-          adivinanza: "Oro parece, plata no es. ¿Qué es?",
-          respuesta: "Platano"
-        },
-        {
-          adivinanza: "Blanco por dentro, verde por fuera. ¿Qué es?",
-          respuesta: "Pera"
-        },
-        {
-          adivinanza: "Dentro de una vaina estoy y ni espada ni sable soy. ¿ Que soy ?",
-          respuesta: "Guisante"
-        },
-        {
-          adivinanza: "¿Qué objeto tiene cuello, pero no cabeza?",
-          respuesta: "Botella"
-        },
-        {
-          adivinanza: "Me llegan las cartas y no sé leer y, aunque me las trago, no mancho el papel ¿Qué es?",
-          respuesta: "Buzon"
-        },
-        {
-          adivinanza: "Soy ave y soy llana, pero no tengo pico ni alas ¿Sabes quién soy?",
-          respuesta: "Avellana"
-        }
-      ];
 
-      function mostrarAdivinanza() {
-        let indice = Math.floor(Math.random() * adivinanzas.length);
-        let adivinanzaActual = adivinanzas[indice].adivinanza;
-        document.getElementById("adivinanza").textContent = adivinanzaActual;
-      }
-
-      mostrarAdivinanza();
-
-      let boton = document.getElementById("comprobar");
-      boton.addEventListener("click", function() {
-        let respuestaIntroducida = document.getElementById("respuesta").value;
-        let respuestaCorrecta = adivinanzas.find(
-          adivinanza => adivinanza.adivinanza === document.getElementById("adivinanza").textContent
-        ).respuesta;
-        if (respuestaIntroducida === respuestaCorrecta) {
-          document.getElementById("resultado").textContent = "¡Correcto!";
-        } else {
-          document.getElementById("resultado").textContent = "Incorrecto, vuelve a intentarlo.";
+      /* Juego Adivinda el Numero */
+      let numero = Math.floor(Math.random() * 100 + 1);
+      
+      function checkNumber() {
+        console.log(numero);
+        let jugador = document.getElementById("numero_jugador").value;
+        console.log(jugador);
+        let valor = parseInt(jugador);
+  
+        if (isNaN(valor)) {
+          document.getElementById("resultado").innerHTML = "<strong class=\"error\">ERROR</strong>";
           return;
         }
-        document.getElementById("respuesta").value = "";
-        mostrarAdivinanza();
-        document.getElementById("resultado").textContent = "";
-      });
+        if (valor > numero) {
+          document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es mayor</em>";
+        }
+        else if (valor < numero) {
+          document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es menor</em>";
+        }
+        else {
+          document.getElementById("resultado").innerHTML = "<strong>Felicidades, has acertado el número</strong>";
+        }
+      }
       
-      let botonSiguiente = document.getElementById("siguiente");
-      botonSiguiente.addEventListener("click", function() {
-        mostrarAdivinanza();
-        document.getElementById("resultado").textContent = "";
-        document.getElementById("respuesta").value = "";
-      });
-    </script>
-  </body>
+      let adivina = [];
+      let current;
+  
+      fetch('adivinaza.json')
+        .then(response => response.json())
+        .then(data => {
+          adivina = data;
+          show();
+        })
+        .catch(error => {
+          console.error('Error al cargar las adivina:', error);
+        });
+  
+      function show() {
+        current = adivina[Math.floor(Math.random() * adivina.length)];
+        document.getElementById('pregunta').innerText = current.pregunta;
+      }
+  
+      function respuestacorrecta() {
+      
+        let respuestaUsuario = document.getElementById('answer').value.toLowerCase();
+        
+        if (verificarespuesta(respuestaUsuario, current.respuesta.toLowerCase())) {
+          document.getElementById('respuestafinal').innerHTML = "Correcto!";
+          
+        } else {
+          document.getElementById('respuestafinal').innerHTML = "Incorrecto. Prueba otra vez";
+        }
+      }
+  
+      function cambiadivinanza() {
+        show();
+        document.getElementById('answer').value = ''; 
+        document.getElementById('respuestafinal').innerHTML = ''; 
+      }
+  
+      function verificarespuesta(respuestaUsuario, respuestaCorrecta) {
+        return respuestaUsuario === respuestaCorrecta;
+      }
+
+    </script> 
+</head>
+<body id="game-page">
+
+	<header>
+		<h1>Juegos</h1>
+  </header>
+
+	<nav>
+		<ul>
+			<li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="cv.html">Curriculum Vitae</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="index.html">Portada</a></li>
+		</ul>
+
+	</nav>
+	<main>
+		<h2 id="titulo_juego">Primer Juego: Adivina el número entre 1 y 100</h2>
+
+		<p id="resultado">Introduce un número</p>
+		<p><input type="text" id="numero_jugador"/></p>
+		<p><input type="button" value="Adivina!" onClick="checkNumber();" /></p>
+
+
+		<h2 id="titulo_2juego">Segundo Juego: Adivina adivinanza</h2>
+
+		<p id="pregunta"></p>
+		<div class="adivina"><input type="text" id="answer" placeholder="Por favor introduce una respuesta"></div>
+
+		<button id="respuesta" onClick="respuestacorrecta();">Comprueba</button>
+		<button id="cambiar" onClick="cambiadivinanza();">Cambia Adivinanza</button>
+
+		<p id="respuestafinal"></p>
+
 </html>

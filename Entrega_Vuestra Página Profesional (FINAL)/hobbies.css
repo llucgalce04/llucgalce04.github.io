@@ -57,9 +57,7 @@ header {
 	background-color: #333;
 	
 	}
-	html{
-		background-color: #000;
-	}
+	
 	
 	/* Estilos del contenido principal */
 	main {
@@ -199,3 +197,40 @@ header {
 	background-color: #ddd;
   }
   
+
+main ul{
+	display:flex;
+	flex-direction:row;	
+	
+	list-style:none; /*para que no salgan los puntos que marcan una lista */
+	
+	justify-content:space-around;
+	padding:0px;
+	margin:0px;
+}
+
+main ul figure{
+	position:relative;
+}
+
+
+main ul figure:hover figcaption{
+	display:block;
+}
+
+main ul figure figcaption{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	
+	background: rgba(0,0,0,.8);
+	text-align:center;
+	
+	padding:16px;
+	color:white;
+}	
