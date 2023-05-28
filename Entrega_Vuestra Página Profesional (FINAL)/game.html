@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Juego</title>
-		<link rel="stylesheet" href="game.css" />
-	</head>
-    
+<head>
+	<meta charset="UTF-8" />
+	<title>Toni Galan </title>
+	<script>
+		let numero = Math.floor(Math.random() * 100 + 1);
+		
+		function checkNumber() {
+			console.log(numero);
+			let jugador = document.getElementById("numero_jugador").value;
+			console.log(jugador);
+			let valor = parseInt(jugador);
 
-    <script>
+			if (isNaN(valor)) {
+				document.getElementById("resultado").innerHTML = "<strong class=\"error\">ERROR</strong>";
+				return;
+			}
+			if (valor > numero) {
+				document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es mayor</em>";
+			}
+			else if (valor < numero) {
+				document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es menor</em>";
+			}
+			else {
+				document.getElementById("resultado").innerHTML = "<strong>Felicidades, has acertado el número</strong>";
+			}
+		}
 
-      /* Juego Adivinda el Numero */
-      let numero = Math.floor(Math.random() * 100 + 1);
-      
-      function checkNumber() {
-        console.log(numero);
-        let jugador = document.getElementById("numero_jugador").value;
-        console.log(jugador);
-        let valor = parseInt(jugador);
-  
-        if (isNaN(valor)) {
-          document.getElementById("resultado").innerHTML = "<strong class=\"error\">ERROR</strong>";
-          return;
-        }
-        if (valor > numero) {
-          document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es mayor</em>";
-        }
-        else if (valor < numero) {
-          document.getElementById("resultado").innerHTML = "<em>El número " + valor + " es menor</em>";
-        }
-        else {
-          document.getElementById("resultado").innerHTML = "<strong>Felicidades, has acertado el número</strong>";
-        }
-      }
-      
-      let adivina = [];
-      let current;
-  
-      fetch('adivinaza.json')
-        .then(response => response.json())
-        .then(data => {
-          adivina = data;
-          show();
-        })
-        .catch(error => {
-          console.error('Error al cargar las adivina:', error);
-        });
-  
-      function show() {
-        current = adivina[Math.floor(Math.random() * adivina.length)];
-        document.getElementById('pregunta').innerText = current.pregunta;
-      }
-  
-      function respuestacorrecta() {
-      
-        let respuestaUsuario = document.getElementById('answer').value.toLowerCase();
-        
-        if (verificarespuesta(respuestaUsuario, current.respuesta.toLowerCase())) {
-          document.getElementById('respuestafinal').innerHTML = "Correcto!";
-          
-        } else {
-          document.getElementById('respuestafinal').innerHTML = "Incorrecto. Prueba otra vez";
-        }
-      }
-  
-      function cambiadivinanza() {
-        show();
-        document.getElementById('answer').value = ''; 
-        document.getElementById('respuestafinal').innerHTML = ''; 
-      }
-  
-      function verificarespuesta(respuestaUsuario, respuestaCorrecta) {
-        return respuestaUsuario === respuestaCorrecta;
-      }
+		let adivina = [];
+		let current;
 
-    </script> 
+		fetch('adivina.json')
+			.then(response => response.json())
+			.then(data => {
+				adivina = data;
+				show();
+			})
+			.catch(error => {
+				console.error('Error al cargar las adivina:', error);
+			});
+
+		function show() {
+			current = adivina[Math.floor(Math.random() * adivina.length)];
+			document.getElementById('pregunta').innerText = current.pregunta;
+		}
+
+		function respuestacorrecta() {
+		
+			let respuestaUsuario = document.getElementById('answer').value.toLowerCase();
+			
+			if (verificarespuesta(respuestaUsuario, current.respuesta.toLowerCase())) {
+				document.getElementById('respuestafinal').innerHTML = "Correcto!";
+				
+			} else {
+				document.getElementById('respuestafinal').innerHTML = "Incorrecto. Prueba otra vez";
+			}
+		}
+
+		function cambiadivinanza() {
+			show();
+			document.getElementById('answer').value = ''; 
+			document.getElementById('respuestafinal').innerHTML = ''; 
+		}
+
+		function verificarespuesta(respuestaUsuario, respuestaCorrecta) {
+			return respuestaUsuario === respuestaCorrecta;
+		}
+
+	</script>
 </head>
 <body id="game-page">
 
 	<header>
-		<h1>Juegos</h1>
-  </header>
+		<h1>Toni Galán</h1>
+		<p>Estudiante de Ciberseguridad en Enti</p>
+	</header>
 
 	<nav>
 		<ul>
-			<li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="cv.html">Curriculum Vitae</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-        <li><a href="index.html">Portada</a></li>
+			<li><a href="index.html">Portada</a></li>
+			<li><a href="cv.html">CV</a></li>
+			<li><a href="projects.html">Proyectos</a></li>
+			<li><a href="contact.html">Contacto</a></li>
+			<li><a href="games.html">Games</a></li>
 		</ul>
 
 	</nav>
@@ -108,4 +104,12 @@
 
 		<p id="respuestafinal"></p>
 
+	</main>
+
+	<footer>
+		<h2>Información extra</h2>
+		<p>Toni Galán (c) 2023</p>
+	</footer>
+
+</body>
 </html>
