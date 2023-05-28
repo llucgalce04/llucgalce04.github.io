@@ -97,7 +97,7 @@ El propósito de una DTD es establecer una **estructura bien definida y coherent
 
 **DTD** es más antiguo que **XSD** *(XML Schema Definition)* y **DTD** es *universal*, se interpreta bastante más fácil, los bancos lo usan. También se utiliza para *validar*.
 
-El **orden de validación puede variar según tu gusto**: Puedes poner primero `<!ELEMENT>` que es una *declaración*, seguido de el **término técnico** que se refieren a un *tipo de contenido permitido en un elemento*, como por ejemplo **#PCDATA** y justo abajo la otra *declaración* (si es que tiene) `<!ATTLIST>` que se refiere a la declaración de los *atributos*.
+El **orden de validación puede variar según tu gusto**: Puedes poner primero `<!ELEMENT>` que es una *declaración*, seguido de el **término técnico** que se refieren a un *tipo de contenido permitido en un elemento*, como por ejemplo **#PCDATA** y justo abajo la otra *declaración* `<!ATTLIST>` que se refiere a la declaración de los *atributos*.
 
 Terminos técnicos:
 
