@@ -1,7 +1,5 @@
 /* Estilo general */
-html {
-    background-color: #000;
-}
+
 body {
     margin: 0;
     padding: 0;
@@ -44,6 +42,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     color: #f2f2f2;
+    background-color: #000;
   }
 
  nav h1 {
@@ -157,6 +156,14 @@ body {
     font-family:sans-serif;
     margin: 0;
     }
+    html {
+      color: #fff;
+      background-image: url('contact.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width:"250";
+      height:"250";
+      }
 
    
     

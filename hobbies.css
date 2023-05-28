@@ -73,27 +73,6 @@ header {
 	font-size: 20px;
 	}
 	
-	
-	main blockquote {
-	background-color: #f2f2f2;
-	padding: 20px;
-	font-style: italic;
-	font-size: 20px;
-	}
-	
-	main blockquote p {
-	margin: 0;
-	}
-	
-	main blockquote em {
-	font-style: normal;
-	}
-	
-	main ol {
-	margin-left: 20px;
-	font-size: 20px;
-	}
-	
 	main ul {
 	margin-left: 20px;
 	font-size: 20px;
@@ -103,30 +82,7 @@ header {
 	margin-bottom: 10px;
 	}
 	
-	/* Estilos del formulario */
-	form {
-	margin-bottom: 20px;
-	}
 	
-	form p {
-	font-size: 20px;
-	}
-	
-	form input[type="button"] {
-	font-size: 20px;
-	padding: 10px;
-	background-color: #333;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	}
-	
-	form input[type="button"]:hover {
-	background-color: #f2f2f2;
-	color: #333;
-	cursor: pointer;
-	}
-  
 	footer {
 		position: fixed; 
 		bottom: 0;
@@ -168,42 +124,21 @@ header {
    ul li:hover ul {
 	text-decoration: none;
 	display: block;
-  }
+  } 
+
+   ul li h3 {
+	color: #ffffff;
+	background-color: #000;
+	text-align: center;
+
+   }
   
-   ul ul {
-	text-decoration: none;
-	display: none;
-	position: absolute;
-	padding: 0;
-	margin: 0;
-	background-color: #fff;
-	border: 1px solid #ccc;
-  }
-  
-   ul ul li {
-	text-decoration: none;
-	display: block;
-  }
-  
-   ul ul li a {
-	display: block;
-	padding: 10px;
-	color: #000;
-	text-decoration: none;
-  }
-  
-   ul ul li a:hover {
-	text-decoration: none;
-	background-color: #ddd;
-  }
   
 
 main ul{
 	display:flex;
 	flex-direction:row;	
-	
-	list-style:none; /*para que no salgan los puntos que marcan una lista */
-	
+	list-style:none;
 	justify-content:space-around;
 	padding:0px;
 	margin:0px;
@@ -225,7 +160,7 @@ main ul figure figcaption{
 	left:0;
 	bottom:0;
 	right:0;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:sans-serif;
 	font-size:5px;
 	
 	background: rgba(0,0,0,.8);
@@ -234,3 +169,11 @@ main ul figure figcaption{
 	padding:16px;
 	color:white;
 }	
+html {
+	color: #fff;
+	background-image: url('hobies.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width:"250";
+	height:"250";
+  }

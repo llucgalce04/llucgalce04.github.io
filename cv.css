@@ -139,3 +139,11 @@ color: #fff;
     left: 0;
     width: 100%;
   }
+  html {
+		color: #fff;
+		background-image: url('cv.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		width:"250";
+		height:"250";
+	  }
