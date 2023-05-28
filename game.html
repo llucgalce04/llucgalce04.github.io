@@ -2,7 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Toni Galan </title>
+	<title>Juegos Lluc Galceran Jodar</title>
+	<link rel="stylesheet" href="game.css" />
 	<script>
 		let numero = Math.floor(Math.random() * 100 + 1);
 		
@@ -45,22 +46,22 @@
 			document.getElementById('pregunta').innerText = current.pregunta;
 		}
 
-		function respuestacorrecta() {
+		function correctanswer() {
 		
 			let respuestaUsuario = document.getElementById('answer').value.toLowerCase();
 			
 			if (verificarespuesta(respuestaUsuario, current.respuesta.toLowerCase())) {
-				document.getElementById('respuestafinal').innerHTML = "Correcto!";
+				document.getElementById('finalanswer').innerHTML = "Correcto!";
 				
 			} else {
-				document.getElementById('respuestafinal').innerHTML = "Incorrecto. Prueba otra vez";
+				document.getElementById('finalanswer').innerHTML = "Incorrecto. Prueba otra vez";
 			}
 		}
 
-		function cambiadivinanza() {
+		function changeadivinanza() {
 			show();
 			document.getElementById('answer').value = ''; 
-			document.getElementById('respuestafinal').innerHTML = ''; 
+			document.getElementById('finalanswer').innerHTML = ''; 
 		}
 
 		function verificarespuesta(respuestaUsuario, respuestaCorrecta) {
@@ -70,46 +71,41 @@
 	</script>
 </head>
 <body id="game-page">
-
-	<header>
-		<h1>Toni Galán</h1>
-		<p>Estudiante de Ciberseguridad en Enti</p>
-	</header>
-
 	<nav>
-		<ul>
-			<li><a href="index.html">Portada</a></li>
-			<li><a href="cv.html">CV</a></li>
-			<li><a href="projects.html">Proyectos</a></li>
-			<li><a href="contact.html">Contacto</a></li>
-			<li><a href="games.html">Games</a></li>
-		</ul>
+		<ul class="menu">
 
+        <li><a href="cv.html">Curriculum Vitae</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+		<li><a href="index.html">Portada</a></li>
+
+		</ul>
 	</nav>
+
 	<main>
-		<h2 id="titulo_juego">Primer Juego: Adivina el número entre 1 y 100</h2>
+		<h2 id="titulo_juego">Juego 1: Adivina el Numero</h2>
 
 		<p id="resultado">Introduce un número</p>
 		<p><input type="text" id="numero_jugador"/></p>
 		<p><input type="button" value="Adivina!" onClick="checkNumber();" /></p>
 
 
-		<h2 id="titulo_2juego">Segundo Juego: Adivina adivinanza</h2>
+		<h2 id="titulo_2juego">Juego 2: Adivina Adivinanza</h2>
 
 		<p id="pregunta"></p>
 		<div class="adivina"><input type="text" id="answer" placeholder="Por favor introduce una respuesta"></div>
 
-		<button id="respuesta" onClick="respuestacorrecta();">Comprueba</button>
-		<button id="cambiar" onClick="cambiadivinanza();">Cambia Adivinanza</button>
+		<button id="respuesta" onClick="correctanswer();">Comprueba</button>
+		<button id="cambiar" onClick="changeadivinanza();">Cambia Adivinanza</button>
 
-		<p id="respuestafinal"></p>
+		<p id="finalanswer"></p>
 
 	</main>
 
 	<footer>
-		<h2>Información extra</h2>
-		<p>Toni Galán (c) 2023</p>
+		<p>llucgalce (c) 2023</p>
 	</footer>
+
 
 </body>
 </html>
